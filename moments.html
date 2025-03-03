@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding and responsive settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>Gerald Ford - His Story</title>
+    
+    <!-- Import Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Import Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Container for the timeline */
+        .timeline-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        /* Style for individual timeline events */
+        .timeline-event {
+            cursor: pointer;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            transition: background-color 0.3s;
+        }
+
+        /* Hover effect for timeline events */
+        .timeline-event:hover {
+            background-color: #e9ecef;
+        }
+
+        /* Details section for selected timeline events */
+        .event-details {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Gerald Ford</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="record.html">His Records</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="moments.html">His Story</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Background Image -->
+    <div class="hero" style="background-image: url('imgs/sathvik.jpg');">
+        <div class="hero-content">
+            <h1 class="hero-h1">Key Moments</h1>
+            <p class="hero-p">Explore the defining moments in Gerald Ford's life and presidency.</p>
+        </div>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="timeline-container">
+        <div id="timeline"></div>
+        <div id="eventDetails" class="event-details"></div>
+    </div>
+
+    <script>
+        // Array containing timeline events with year, title, and details
+        const timelineEvents = [
+            { year: "1913", title: "Birth in Omaha", details: "Born Leslie Lynch King Jr. on July 14, 1913, in Omaha, Nebraska. His mother Dorothy separated from his biological father weeks after his birth due to domestic abuse." },
+            { year: "1916", title: "New Family", details: "His mother remarried Gerald Rudolff Ford, who gave young Leslie his name and raised him as his own son." },
+            { year: "1931", title: "High School Success", details: "Named to the Grand Rapids All-City football team as a center, demonstrating early leadership abilities." },
+            { year: "1935", title: "University of Michigan", details: "Graduated from the University of Michigan where he was a star football player, playing center and linebacker. He was offered professional contracts by the Detroit Lions and Green Bay Packers." },
+            { year: "1941", title: "Yale Law School", details: "Graduated from Yale Law School while working as an assistant football coach. Ranked in the top quarter of his class despite coaching duties." },
+            { year: "1942-1946", title: "Military Service", details: "Served in the U.S. Navy during World War II aboard the USS Monterey. Survived a devastating typhoon and earned several medals for his service." },
+            { year: "1948", title: "Congress Entry", details: "Won election to the U.S. House of Representatives, beginning a long career in national politics." },
+            { year: "1974", title: "Becomes President", details: "Assumed presidency following Richard Nixon's resignation, becoming the 38th President and the only person to serve as both Vice President and President without being elected." }
+        ];
+
+        // Function to display the timeline events
+        function displayTimeline() {
+            const timeline = document.getElementById('timeline');
+            timelineEvents.forEach(event => {
+                const eventElement = document.createElement('div');
+                eventElement.className = 'timeline-event';
+                eventElement.innerHTML = `<h3>${event.year} - ${event.title}</h3>`;
+                eventElement.onclick = () => showEventDetails(event); // Set click event to show details
+                timeline.appendChild(eventElement);
+            });
+        }
+
+        // Function to show details of the selected event
+        function showEventDetails(event) {
+            const detailsElement = document.getElementById('eventDetails');
+            detailsElement.innerHTML = `<h4>${event.year} - ${event.title}</h4><p>${event.details}</p>`;
+        }
+
+        // Initialize the timeline on page load
+        window.onload = function () {
+            displayTimeline(); // Populate timeline
+            showEventDetails(timelineEvents[0]); // Show first event by default
+        };
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="text-center text-muted">
+                <small>&copy; 2025 Gerald Ford Tribute. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

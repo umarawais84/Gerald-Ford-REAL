@@ -1,0 +1,319 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif; /* Set a clean and simple font for the body */
+    background-color: #001f3f; /* Set dark blue background color */
+}
+
+/* Hero Section Text Styling */
+p.hero-p {
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font for paragraph text */
+    font-size: 25px; /* Set font size for the paragraph */
+    font-weight: 400; /* Set normal font weight */
+    line-height: 1.4; /* Adjust line spacing for readability */
+}
+
+h1.hero-h1 {
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font for the heading */
+    font-size: 50px; /* Set large font size for the heading */
+    font-weight: 700; /* Set bold font weight */
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 1px; /* Add slight space between letters */
+}
+
+/* Hero Section with Background Image */
+.hero {
+    background: url('imgs/gerald.webp') no-repeat center center/cover; /* Set a background image with proper positioning */
+    position: relative; /* Position content relative to the section */
+    width: 100%; /* Full width */
+    height: 700px; /* Set height for the hero section */
+    display: flex; /* Flexbox to arrange items */
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center; /* Vertically center the content */
+    padding-right: 10%; /* Add some padding to the right */
+    animation: zoomOut 2s ease-out; /* Apply a zoom-out animation */
+    color: #f8f9fa; /* Set light text color */
+    background-size: cover; /* Ensure the background image fully covers the area */
+    background-position: center; /* Center the background image */
+}
+
+/* Zoom-out Animation */
+@keyframes zoomOut {
+    from {
+        transform: scale(1.05); /* Start with the image slightly zoomed in */
+    }
+
+    to {
+        transform: scale(1); /* End with the image at normal scale */
+    }
+}
+
+.hero-content {
+    color: white; /* White text color */
+    text-align: left; /* Align text to the left */
+    max-width: 40%; /* Limit the width of the content */
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font for the content */
+}
+
+/* Card Styles */
+.card-container {
+    display: flex; /* Flexbox to arrange cards */
+    gap: 60px; /* Add space between cards */
+    justify-content: center; /* Center the cards */
+    align-items: flex-start; /* Align the cards at the top */
+    flex-wrap: wrap; /* Allow cards to wrap when needed */
+    padding: 40px; /* Add padding around the container */
+    max-width: 1400px; /* Set a maximum width */
+    margin: 0 auto; /* Center the card container */
+}
+
+.card-link {
+    text-decoration: none; /* Remove underlines from links */
+    color: inherit; /* Inherit color from parent */
+    display: inline-block; /* Make link behave like a block */
+}
+
+.card {
+    position: relative; /* Position cards relative to the container */
+    width: 360px; /* Set a fixed width for the cards */
+    height: 600px; /* Set a fixed height for the cards */
+    border-radius: 20px; /* Round the corners */
+    overflow: hidden; /* Hide any overflowed content */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Apply shadow for a card effect */
+    transition: transform 0.3s ease-in-out; /* Smooth scale transition when hovering */
+    display: flex; /* Flexbox for card content */
+    flex-direction: column; /* Arrange card content vertically */
+    justify-content: space-between; /* Distribute content vertically */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+.card .card-header {
+    position: absolute; /* Position header absolutely within card */
+    top: 0; /* Align it to the top */
+    width: 100%; /* Full width of the card */
+    padding: 15px; /* Add padding around the header */
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    font-weight: bold; /* Make header text bold */
+    font-size: 18px; /* Set font size */
+    text-transform: uppercase; /* Uppercase the text */
+    text-align: center; /* Center the text */
+    border-radius: 10px 10px 0 0; /* Round the top corners */
+    z-index: 2; /* Make sure header is above other elements */
+}
+
+.card .card-body {
+    position: absolute; /* Position body absolutely within card */
+    bottom: 0; /* Align to the bottom */
+    width: 100%; /* Full width of the card */
+    padding: 20px; /* Add padding */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white; /* Set text color to white */
+    font-size: 16px; /* Set font size */
+    text-align: center; /* Center the text */
+    z-index: 2; /* Make sure body is above other elements */
+}
+
+.card .card-image {
+    width: 100%; /* Full width of the card */
+    height: 100%; /* Full height of the card */
+    object-fit: cover; /* Ensure the image covers the area properly */
+    position: absolute; /* Position the image absolutely */
+    z-index: 1; /* Place the image behind text content */
+}
+
+/* Quiz Styles */
+.quiz-container {
+    max-width: 600px; /* Limit the width of the quiz container */
+    margin: 50px auto; /* Center the quiz container with margin */
+    padding: 20px; /* Add padding */
+}
+
+.quiz-header {
+    border-bottom: 1px solid #dee2e6; /* Add a border below the header */
+    padding-bottom: 15px; /* Add padding below the header */
+}
+
+.quiz-score {
+    background-color: #001f3f; /* Dark blue background for score */
+    color: white; /* White text color */
+    padding: 8px 15px; /* Add padding around score */
+    border-radius: 20px; /* Round corners */
+    font-weight: bold; /* Make score text bold */
+    font-size: 18px; /* Set font size */
+}
+
+#questionContainer {
+    border-radius: 15px; /* Round the corners of the question container */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important; /* Apply shadow for depth */
+}
+
+.feedback {
+    display: none; /* Hide feedback by default */
+    margin-top: 10px; /* Add margin above feedback */
+    font-weight: 500; /* Make feedback text bold */
+}
+
+#options .form-check {
+    padding: 12px; /* Add padding around options */
+    margin-bottom: 10px; /* Add margin below options */
+    border: 1px solid #dee2e6; /* Add border around options */
+    border-radius: 8px; /* Round corners */
+    transition: all 0.2s ease; /* Smooth transition on hover */
+}
+
+#options .form-check:hover {
+    background-color: #f8f9fa; /* Change background color on hover */
+}
+
+#options .form-check-input {
+    margin-right: 10px; /* Add space between radio button and label */
+}
+
+.btn-primary {
+    background-color: #001f3f; /* Dark blue background for button */
+    border-color: #001f3f; /* Match border with background */
+    padding: 10px 25px; /* Add padding around the button */
+    font-weight: 500; /* Make text bold */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.btn-primary:hover {
+    background-color: #003366; /* Lighter blue on hover */
+    border-color: #003366; /* Lighter border on hover */
+    transform: translateY(-2px); /* Slightly lift the button on hover */
+}
+
+/* Record Page Styles */
+.boxes-container {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+    grid-template-rows: repeat(2, 1fr); /* Two equal-height rows */
+    gap: 20px; /* Space between boxes */
+    padding: 20px; /* Padding around the container */
+    max-width: 1200px; /* Limit the width of the container */
+    margin: 40px auto; /* Center the container */
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    border: 2px solid white; /* White border around each box */
+    padding: 20px; /* Add padding inside the box */
+    border-radius: 10px; /* Round the corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: all 0.3s ease; /* Smooth transition for transformations */
+    color: white; /* White text color */
+    position: relative; /* Allow absolute positioning inside the box */
+}
+
+.box:hover {
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+}
+
+.box.expanded {
+    position: fixed; /* Fix the box in place when expanded */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Bring the box above all other elements */
+    background-color: rgba(0, 31, 63, 0.95); /* Semi-transparent dark background */
+    transform: none; /* Reset any transform */
+    display: flex; /* Use flexbox to center content */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    border: none; /* Remove borders */
+}
+
+.close-btn {
+    position: absolute; /* Position the close button absolutely */
+    top: 20px;
+    right: 20px;
+    background: none; /* No background for the button */
+    border: none; /* No border */
+    color: white; /* White text color */
+    font-size: 30px; /* Large font size */
+    cursor: pointer; /* Pointer cursor */
+    display: none; /* Hide the button by default */
+}
+
+.box.expanded .close-btn {
+    display: block; /* Show the close button when the box is expanded */
+}
+
+.box h3 {
+    margin-bottom: 10px; /* Add space below the heading */
+}
+
+#quoteDisplay {
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+    color: #001f3f; /* Dark blue text color */
+    padding: 20px; /* Add padding around the quote */
+    border-radius: 10px; /* Round the corners */
+    font-style: italic; /* Italicize the quote text */
+    font-size: 1.2em; /* Increase the font size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    margin: 20px 0; /* Add margin above and below the quote */
+    max-width: 500px; /* Limit the width of the quote */
+    text-align: center; /* Center the text */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center the cards */
+        gap: 20px; /* Reduce space between cards */
+        padding: 20px; /* Reduce padding around the container */
+    }
+
+    .card-link {
+        width: 100%; /* Make the card links full-width */
+        max-width: 320px; /* Set a maximum width for the card links */
+    }
+
+    .card {
+        width: 100%; /* Set card width to 100% for responsiveness */
+        margin: 0; /* Remove margin around cards */
+        height: 500px; /* Reduce height of the cards */
+    }
+
+    .hero-content {
+        max-width: 90%; /* Increase max-width for hero content */
+        text-align: center; /* Center text */
+        margin: 0 auto; /* Center content */
+        padding: 20px; /* Add padding around the content */
+        background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+        border-radius: 10px; /* Round the corners */
+    }
+
+    .hero {
+        justify-content: center; /* Center hero content */
+        padding-right: 0; /* Remove right padding */
+        height: 500px; /* Reduce height of hero section */
+    }
+
+    .hero-h1 {
+        font-size: 36px; /* Reduce font size for header */
+    }
+
+    .hero-p {
+        font-size: 18px; /* Reduce font size for paragraph */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-h1 {
+        font-size: 28px; /* Further reduce font size for smaller screens */
+    }
+
+    .hero-p {
+        font-size: 16px; /* Further reduce font size for smaller screens */
+    }
+
+    .card {
+        height: 400px; /* Further reduce card height */
+    }
+}
